@@ -9,3 +9,6 @@ documentation = "https://docs.rs/supports-hyperlinks"
 license = "Apache-2.0"
 readme = "README.md"
 edition = "2018"
+
+[dependencies]
+atty = "0.2.14"

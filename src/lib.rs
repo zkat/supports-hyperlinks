@@ -1,3 +1,7 @@
+#![doc = include_str!("../README.md")]
+
+pub use atty::Stream;
+
 pub fn supports_hyperlinks() -> bool {
     if std::env::var("DOMTERM").is_ok() {
         // DomTerm
@@ -19,4 +23,8 @@ pub fn supports_hyperlinks() -> bool {
             // Konsole
             std::env::var("KONSOLE_VERSION").is_ok()
     }
+}
+
+pub fn on(stream: Stream) -> bool {
+    atty::is(stream) && supports_hyperlinks()
 }
