@@ -2,6 +2,8 @@
 
 pub use atty::Stream;
 
+/// Returns true if the current terminal, detected through various environment
+/// variables, is known to support hyperlink rendering.
 pub fn supports_hyperlinks() -> bool {
     if std::env::var("DOMTERM").is_ok() {
         // DomTerm
@@ -35,6 +37,8 @@ pub fn supports_hyperlinks() -> bool {
     std::env::var("WT_SESSION").is_ok() || std::env::var("KONSOLE_VERSION").is_ok()
 }
 
+/// Returns true if `stream` is a TTY, and the current terminal
+/// [supports_hyperlinks].
 pub fn on(stream: Stream) -> bool {
     atty::is(stream) && supports_hyperlinks()
 }
