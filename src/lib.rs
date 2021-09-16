@@ -5,6 +5,11 @@ pub use atty::Stream;
 /// Returns true if the current terminal, detected through various environment
 /// variables, is known to support hyperlink rendering.
 pub fn supports_hyperlinks() -> bool {
+    // Hyperlinks can be forced through this env var.
+    if let Ok(arg) = std::env::var("FORCE_HYPERLINK") {
+        return arg.trim() != "0";
+    }
+
     if std::env::var("DOMTERM").is_ok() {
         // DomTerm
         return true;
@@ -40,5 +45,5 @@ pub fn supports_hyperlinks() -> bool {
 /// Returns true if `stream` is a TTY, and the current terminal
 /// [supports_hyperlinks].
 pub fn on(stream: Stream) -> bool {
-    atty::is(stream) && supports_hyperlinks()
+    (std::env::var("FORCE_HYPERLINK").is_ok() || atty::is(stream)) && supports_hyperlinks()
 }
