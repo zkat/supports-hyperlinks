@@ -1,5 +1,12 @@
 # `supports-hyperlinks` Release Changelog
 
+<a name="2.0.0"></a>
+## 2.0.0 (????)
+
+### Breaking Changes
+
+* `supports_hyperlinks` now depends on `is-terminal` instead of `atty`. This is a breaking change to the API.
+
 <a name="1.2.0"></a>
 ## 1.2.0 (2021-09-16)
 
