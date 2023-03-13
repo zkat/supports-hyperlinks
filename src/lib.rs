@@ -1,6 +1,11 @@
 #![doc = include_str!("../README.md")]
 
-pub use atty::Stream;
+/// possible stream sources
+#[derive(Clone, Copy, Debug)]
+pub enum Stream {
+    Stdout,
+    Stderr,
+}
 
 /// Returns true if the current terminal, detected through various environment
 /// variables, is known to support hyperlink rendering.
@@ -42,8 +47,16 @@ pub fn supports_hyperlinks() -> bool {
     std::env::var("WT_SESSION").is_ok() || std::env::var("KONSOLE_VERSION").is_ok()
 }
 
+fn is_a_tty(stream: Stream) -> bool {
+    use is_terminal::*;
+    match stream {
+        Stream::Stdout => std::io::stdout().is_terminal(),
+        Stream::Stderr => std::io::stderr().is_terminal(),
+    }
+}
+
 /// Returns true if `stream` is a TTY, and the current terminal
 /// [supports_hyperlinks].
 pub fn on(stream: Stream) -> bool {
-    (std::env::var("FORCE_HYPERLINK").is_ok() || atty::is(stream)) && supports_hyperlinks()
+    (std::env::var("FORCE_HYPERLINK").is_ok() || is_a_tty(stream)) && supports_hyperlinks()
 }
