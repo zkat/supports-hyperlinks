@@ -1,5 +1,17 @@
 # `supports-hyperlinks` Release Changelog
 
+<a name="2.0.0"></a>
+## 2.0.0 (2023-03-13)
+
+This semver-major release is just for switching away from `atty` due to
+soundness and maintenance concerns. See [this issue in `supports-color` for
+more details](https://github.com/zkat/supports-color/issues/9)
+
+### Features
+
+* **tty:** Switch from `atty` to `is-terminal` (#3) ([a321f355](https://github.com/zkat/supports-hyperlinks/commit/a321f35558f9dcb47d225c25e74d8c0d911bbaa8))
+    * **BREAKING CHANGE**: the exported `Stream` enum is no longer an `atty` type, and this crate no longer accepts `atty` types as input.
+
 <a name="1.2.0"></a>
 ## 1.2.0 (2021-09-16)
 
