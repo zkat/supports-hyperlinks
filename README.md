@@ -10,7 +10,9 @@ send a PR!
 The API is super simple!
 
 ```rust
-if supports_hyperlinks::on(&std::io::stdout()) {
+use supports_hyperlinks::Stream;
+
+if supports_hyperlinks::on(Stream::Stdout) {
     println!("This terminal supports hyperlinks on stdout");
 } else {
     println!("No hyperlinks, please");
