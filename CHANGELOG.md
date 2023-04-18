@@ -1,5 +1,16 @@
 # `supports-hyperlinks` Release Changelog
 
+<a name="2.1.0"></a>
+## 2.1.0 (2023-04-18)
+
+### Features
+
+* **terms:** add support for a couple more terminals ([0a7728c5](https://github.com/zkat/supports-hyperlinks/commit/0a7728c5b2d67a7bb52d497c2ce567a2d496d9db))
+
+### Miscellaneous Tasks
+
+* **edition:** bump edition to 2021 ([5cd860b1](https://github.com/zkat/supports-hyperlinks/commit/5cd860b1c36ebc0820ad66bf5736609f83365830))
+
 <a name="2.0.0"></a>
 ## 2.0.0 (2023-03-13)
 
