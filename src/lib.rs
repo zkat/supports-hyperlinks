@@ -30,15 +30,20 @@ pub fn supports_hyperlinks() -> bool {
     if let Ok(program) = std::env::var("TERM_PROGRAM") {
         if matches!(
             &program[..],
-            "Hyper" | "iTerm.app" | "terminology" | "WezTerm"
+            "Hyper" | "iTerm.app" | "terminology" | "WezTerm" | "vscode"
         ) {
             return true;
         }
     }
 
     if let Ok(term) = std::env::var("TERM") {
-        // Kitty
-        if matches!(&term[..], "xterm-kitty") {
+        if matches!(&term[..], "xterm-kitty" | "alacritty" | "alacritty-direct") {
+            return true;
+        }
+    }
+
+    if let Ok(term) = std::env::var("COLORTERM") {
+        if matches!(&term[..], "xfce4-terminal") {
             return true;
         }
     }
