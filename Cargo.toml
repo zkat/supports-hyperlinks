@@ -9,6 +9,4 @@ documentation = "https://docs.rs/supports-hyperlinks"
 license = "Apache-2.0"
 readme = "README.md"
 edition = "2021"
-
-[dependencies]
-is-terminal = "0.4.0"
+rust-version = "1.70.0"

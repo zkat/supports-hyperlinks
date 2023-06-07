@@ -53,7 +53,7 @@ pub fn supports_hyperlinks() -> bool {
 }
 
 fn is_a_tty(stream: Stream) -> bool {
-    use is_terminal::*;
+    use std::io::IsTerminal;
     match stream {
         Stream::Stdout => std::io::stdout().is_terminal(),
         Stream::Stderr => std::io::stderr().is_terminal(),
