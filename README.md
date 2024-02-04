@@ -26,3 +26,7 @@ And that's it!
 You may set the `FORCE_HYPERLINK` environment variable to force
 `supports-hyperlinks` to return true for its checks. If the value is `0`, this
 will force it to be _false_, instead.
+
+## MSRV
+
+The minimum supported Rust version is 1.70.0.
