@@ -1,5 +1,13 @@
 # `supports-hyperlinks` Release Changelog
 
+<a name="3.0.0"></a>
+## 3.0.0 (2024-02-04)
+
+### Features
+
+* **deps:** Use `std::io::IsTerminal` instead of `is-terminal`. (#4) ([fb84fe60](https://github.com/zkat/supports-hyperlinks/commit/fb84fe60224e82cd7da5f16e8ae6ccc577e980f4))
+    * **BREAKING CHANGE**: This bumps the MSRV to 1.70.0
+
 <a name="2.1.0"></a>
 ## 2.1.0 (2023-04-18)
 
