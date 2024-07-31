@@ -30,7 +30,7 @@ pub fn supports_hyperlinks() -> bool {
     if let Ok(program) = std::env::var("TERM_PROGRAM") {
         if matches!(
             &program[..],
-            "Hyper" | "iTerm.app" | "terminology" | "WezTerm" | "vscode"
+            "Hyper" | "iTerm.app" | "terminology" | "WezTerm" | "vscode" | "ghostty"
         ) {
             return true;
         }
