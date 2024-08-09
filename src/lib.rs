@@ -15,6 +15,11 @@ pub fn supports_hyperlinks() -> bool {
         return arg != "0";
     }
 
+    supports_hyperlinks_without_force_check()
+}
+
+#[inline]
+fn supports_hyperlinks_without_force_check() -> bool {
     if std::env::var_os("DOMTERM").is_some() {
         // DomTerm
         return true;
@@ -94,5 +99,5 @@ pub fn on(stream: Stream) -> bool {
         return arg != "0";
     }
 
-    is_a_tty(stream) && supports_hyperlinks()
+    is_a_tty(stream) && supports_hyperlinks_without_force_check()
 }
