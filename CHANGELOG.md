@@ -1,5 +1,16 @@
 # `supports-hyperlinks` Release Changelog
 
+<a name="3.1.0"></a>
+## 3.1.0 (2024-11-26)
+
+### Features
+
+* **term_programs:** add ghostty as a supported terminal (#5) ([cd892367](https://github.com/zkat/supports-hyperlinks/commit/cd8923675fb77ee336b0c5b7f7f851851a2a6b5c))
+
+### Bug Fixes
+
+* **crates.io:** 'terminal' is not a valid category ([130c715d](https://github.com/zkat/supports-hyperlinks/commit/130c715ddd8fdc047a5e63f2b1f7734ca72f6b51))
+
 <a name="3.0.0"></a>
 ## 3.0.0 (2024-02-04)
 
